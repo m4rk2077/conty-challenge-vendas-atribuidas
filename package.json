@@ -1,0 +1,28 @@
+{
+  "name": "conty-challenge-vendas-atribuidas",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "API local de atribuição de vendas e estornos auditáveis — Conty 05",
+  "engines": { "node": ">=22.13.0 <23" },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/server.js",
+    "pretest": "npm run build",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm test",
+    "seed": "node dist/seed.js",
+    "predemo": "npm run build",
+    "demo": "node examples/demo.mjs"
+  },
+  "dependencies": {
+    "@hono/node-server": "2.1.4",
+    "hono": "4.13.13"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "typescript": "5.9.3",
+    "vitest": "5.0.3"
+  }
+}
